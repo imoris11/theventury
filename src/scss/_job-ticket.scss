@@ -1,0 +1,88 @@
+$frisky-yellow: #f6b932;
+$sloppy-grey: #b4b4b4;
+$main-blue: #1c0a90;
+$job-title-font: "Roboto", sans-serif;
+$border-blue: #3927b1;
+
+.job-ticket {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 0 0 100%;
+  border: 1px solid $border-blue;
+  padding: 20px;
+  margin-bottom: 40px;
+  .job-details {
+    flex: 0 0 100%;
+    .job-title {
+      text-transform: capitalize;
+      font-family: $job-title-font;
+    }
+    .job-progress-bar-rail {
+      width: 70%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      background-color: $frisky-yellow;
+      height: 4px;
+      position: relative;
+      border-radius: 4px;
+      .job-progress-bar {
+        position: absolute;
+        border-radius: 4px;
+        left: 0;
+        background-color: $main-blue;
+        height: 6px;
+        top: -1px;
+      }
+    }
+  }
+  .job-buttons {
+    display: flex;
+    flex-flow: column wrap;
+    flex: 0 0 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    .job-view-more {
+      color: #5a5a5a;
+      font-weight: lighter;
+      font-size: 10px;
+      color: $sloppy-grey;
+    }
+    .job-button-login {
+      padding: 5px 40px;
+      font-family: $job-title-font;
+      color: #fff;
+      background-color: $main-blue;
+      &:hover {
+        background-color: transparent;
+        color: $main-blue;
+        border: 1px solid $main-blue;
+      }
+    }
+  }
+  .avatar {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .job-ticket {
+    margin-bottom: -10px;
+    .job-details {
+      flex: 0 0 60%;
+    }
+    .job-buttons {
+      flex: 0 0 10%;
+      margin: 0%;
+    }
+    .avatar {
+      display: block;
+      flex: 0 0 20%;
+    }
+    .avatar > img {
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+    }
+  }
+}

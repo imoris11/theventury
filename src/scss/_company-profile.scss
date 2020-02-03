@@ -1,0 +1,202 @@
+$company-name-font: "Roboto", sans-serif;
+$company-body-label-font: "Roboto", sans-serif;
+$company-jobs-font: "Oswald", sans-serif;
+$frisky-yellow: #f6b932;
+$sloppy-grey: #b4b4b4;
+$main-blue: #1c0a90;
+body {
+  font-family: $font-family-base;
+}
+.company-profile {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  .row {
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .company-header {
+    width: 100%;
+    height: 250px;
+    background-color: $main-blue;
+  }
+  .company-body {
+    display: flex;
+    flex-flow: row wrap;
+    .left-column {
+      flex: 0 0 100%;
+      justify-content: center;
+      .company-avatar {
+        .margin-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .margin-wrapper > img {
+          border-radius: 50%;
+          height: 120px;
+          width: 120px;
+          margin-top: -15%;
+        }
+      }
+      .company-details {
+        justify-content: center;
+        .company-name {
+          font-family: $company-name-font;
+          color: $frisky-yellow;
+          justify-content: center;
+          font-size: 1.3em;
+          font-weight: 900;
+          margin: 4% 0%;
+        }
+        .company-socials {
+          justify-content: space-evenly;
+          margin-bottom: 3%;
+        }
+        .company-website {
+          justify-content: center;
+        }
+        padding-bottom: 20px;
+      }
+
+      .company-summary {
+        .company-summary-label {
+          font-family: $company-body-label-font;
+          font-weight: bolder;
+          color: $main-blue;
+          text-transform: capitalize;
+        }
+        .company-summary-label:nth-last-child(1)::after {
+          content: "\00a0";
+        }
+
+        .company-summary-label:nth-last-child(2) {
+          flex: 0 0 100%;
+        }
+        .company-summary-label:nth-last-child(2)::after {
+          content: "\a";
+        }
+        .company-summary-element {
+          margin: 1% 0%;
+        }
+      }
+
+      .company-stack {
+        margin-top: 8%;
+        font-weight: bold;
+        .custom-checkbox {
+          flex: 0 0 100%;
+        }
+        .company-stack-label {
+          font-family: $company-body-label-font;
+          color: $main-blue;
+          margin: 2% 0%;
+        }
+        input[type="checkbox"] {
+          height: 15px;
+          width: 15px;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          -o-appearance: none;
+          appearance: none;
+          border-radius: 3px;
+          outline: none;
+          background-color: $input-color;
+          cursor: pointer;
+        }
+        input:checked {
+          background-color: #4b92da;
+        }
+        input:checked::before {
+          content: "\2713";
+          display: block;
+          text-align: center;
+          color: white;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .right-column {
+      .company-jobs {
+        flex-flow: column wrap;
+      }
+      .company-active-jobs {
+        font-family: $company-jobs-font;
+        font-weight: bold;
+        margin: 5% 0%;
+        font-size: 1.8em;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+      }
+      .company-body-label {
+        font-family: $company-body-label-font;
+        color: $frisky-yellow;
+        flex: 0 0 100%;
+        font-size: 1.3em;
+        font-weight: bold;
+        margin: 4% 0%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .company-profile {
+    .company-body {
+      .left-column {
+        justify-content: center;
+        flex: 1;
+        .company-avatar {
+          .margin-wrapper > img {
+            border-radius: 50%;
+            height: 140px;
+            width: 140px;
+            margin-top: -40%;
+          }
+        }
+        .company-details {
+          justify-content: center;
+          .company-name {
+            margin: 6% 0%;
+          }
+          .company-socials {
+            margin: 4% 0%;
+          }
+          .company-website {
+            justify-content: center;
+          }
+          padding-bottom: 20px;
+          border-bottom: 1px solid $sloppy-grey;
+        }
+
+        .company-summary {
+          .company-summary-label {
+            color: $main-blue;
+          }
+        }
+
+        .company-stack {
+          .company-stack-label-label {
+            color: $main-blue;
+          }
+        }
+      }
+
+      .right-column {
+        margin-left: 110px;
+        flex: 4;
+        .company-active-jobs {
+          margin: 2% 0%;
+        }
+        .company-body-label {
+          margin: 0px;
+        }
+        .company-description {
+          margin-top: 7%;
+        }
+      }
+    }
+  }
+}
